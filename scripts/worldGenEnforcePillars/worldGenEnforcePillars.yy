@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"worldGenEnforcePillars",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"worldGenEnforcePillars",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

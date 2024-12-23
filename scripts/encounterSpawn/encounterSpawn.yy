@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"encounterSpawn",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"encounterSpawn",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

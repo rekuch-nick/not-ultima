@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"charEnterTile",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"charEnterTile",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

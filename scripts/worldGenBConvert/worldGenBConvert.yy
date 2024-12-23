@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"worldGenBConvert",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"worldGenBConvert",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
