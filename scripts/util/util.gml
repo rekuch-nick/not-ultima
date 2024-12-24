@@ -5,6 +5,7 @@ enum State {
 	choosingTargetSkillAlly, choosingTargetItemAlly, 
 	choosingTargetSkillFoe, choosingTargetItemFoe, 
 	battleWon, battleLost, battleEscape,
+	partySelect, shop,
 }
 
 enum Class {

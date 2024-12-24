@@ -1,6 +1,11 @@
 event_inherited();
 if(ww.state != State.play){ return; }
 
+if(ww.pressedNO){
+	instance_create_depth(0, 0, ww.layerScreen, objScreenPause);
+	return;
+}
+
 
 if(!inPlace){ return; }
 if(ww.encounter != noone){ return; }

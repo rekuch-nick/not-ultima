@@ -21,6 +21,8 @@ mobRowFront = mobRowBack - 124;
 state = State.title;
 encounter = noone;
 
+tileText = "";
+
 for(var a=0; a<W; a++){ for(var b=0; b<H; b++){
 	fmap[a, b] = imgTFloor;
 	bmap[a, b] = noone;

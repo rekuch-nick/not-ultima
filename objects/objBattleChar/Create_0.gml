@@ -16,7 +16,6 @@ speedMax = 7;
 
 firstFrame = true;
 
-subState = noone;
 hpMax = 10;
 hp = 10;
 

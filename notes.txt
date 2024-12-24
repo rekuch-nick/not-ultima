@@ -1,0 +1,64 @@
+
+
+cleric spells:
+	heal							[+]
+	turn							[insta kill lesser undead, aoe2 on others]
+	life							[super heal, works on fallen]
+	smite							[single target big dmg]
+	
+sorc spells:
+	fire							[aoe]
+	root							[aoe stun & low dmg]
+	ice								[aoe3 & freeze water]
+	poison							[single target can't heal & takes dmg over time]
+	warp							[randomish move or insta-kill single target]
+	counterspell					[chance enemy spells have no effect]
+	
+other:
+	light	(common)				[torches]
+	open	(rogue)					[keys]
+	bomb	(chemist)				[aoe2 + wall breaker]
+	sing	(bard)					[stacking stat buffs for whole party]
+	rage	(barbarian & chemist)	[regen & autoattack for rest of battle]
+	
+
+caster passives:
+	wizard: learn all spells
+	sorc: much more max MP , *chance to counterspell passivly
+	druid: heal, life, fire, root, ice ; recover more MP , *root poisons
+	cleric: heals cure poison, *heals aoe
+	
+	chemist: fire, bomb, rage, ice, poison, heal
+	pala: turn, heal, *smite
+	ranger: root, light 
+	bard: sing + heal, light
+	rogue: open, poison 
+	barb: rage ; 
+	fighter: -
+
+
+stats		dmg		hits	armor	hp	mp	dodge	quick	run
+fighter		4		4		4		3	0	1
+barb		4		4		2		4	1	3
+rog			2		4		2		2	1	4		4		4
+ranger		3		4		3		3	2	3		3		4
+
+pala		3		3		4		3	2	0
+bard		3		3		2		2	3	1
+
+chemist		2		2		2		3	3	1
+cleric		2		2		1		1	4	0
+druid		1		1		1		1	4	0
+sorc		1		1		1		1	6	0
+wizard		1		1		1		1	4	0
+
+
+
+	
+	
+items:
+	torch 	(light)
+	key		(open)
+	seeds	(root) ?
+	
+	

@@ -18,7 +18,7 @@ playerInit();
 coins = 0;
 gotoTown = true; //
 
+firstTown = false; //
 
-
-setParty(batFighter, batPal, batDruid, batWiz);
+setParty(batFighter, batRog, batSorc, batDruid);
 

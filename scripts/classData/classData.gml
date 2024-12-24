@@ -107,5 +107,24 @@ function spellCost(s){
 }
 
 
+function classDescription(c){
+	if(c == Class.fighter){ return "Expert in weapons and armor with high stats."; }
+	if(c == Class.barbarian){ return "Hard hitting attacker with lots of HP."; }
+	if(c == Class.rogue){ return "Fast, evasive attacker. Can open locks without a key. Good at running."; }
+	if(c == Class.ranger){ return "Hard hitting attacker with limited spells and evasive ability."; }
+	if(c == Class.paladin){ return "Tanky attacker that can cast low level cleric spells."; }
+	if(c == Class.bard){ return "Decent attacker with song and healing magic."; }
+	if(c == Class.chemist){ return "Arcane mage with a few uncommon spells. Good stats for a mage."; }
+	if(c == Class.cleric){ return "Healing spells will cure poison and sometimes affect the whole party. "; }
+	if(c == Class.druid){ return "Can cast a mix of cleric and arcane spells. Regains MP twice as quickly."; }
+	if(c == Class.sorcerer){ return "Arcane mage with a very high max MP."; }
+	if(c == Class.wizard){ return "Mage that learns every spell eventually."; }
+	
+	return "...";
+}
+
+
+
+
 
 

@@ -37,6 +37,19 @@ function playerEnterTile(){
 	}
 	
 	
+	if(ww.fmap[pc.xSpot, pc.ySpot] != noone){
+		if(ww.fmap[pc.xSpot, pc.ySpot].sprite_index == imgTGrassInn){
+			instance_create_depth(0, 0, ww.layerScreen, objScreenPartySelect);
+		}
+		
+		if(ww.fmap[pc.xSpot, pc.ySpot].sprite_index == imgTGrassShop){
+			instance_create_depth(0, 0, ww.layerScreen, objScreenShop);
+		}
+		
+		if(ww.fmap[pc.xSpot, pc.ySpot].sprite_index == imgTGrassTemple){
+			instance_create_depth(0, 0, ww.layerScreen, objScreenShop);
+		}
+	}
 	
 	
 	if(ww.inTown){ return; }

@@ -13,10 +13,19 @@ function worldGenTown(){
 	mmap[pc.xSpot, pc.ySpot] = noone;
 	pc.xSpot = 8;
 	pc.ySpot = 9;
+	
+	if(pc.firstTown){
+		pc.firstTown = false;
+		pc.xSpot = 0;
+		pc.ySpot = 3;
+	}
+	
 	pc.x = pc.xSpot * 64 + 32;
 	pc.y = pc.ySpot * 64 + 32;
 	mmap[pc.xSpot, pc.ySpot] = pc;
 	pc.enterTrigger = false;
+	
+	
 	
 	
 	for(var a=0; a<W; a++){ for(var b=0; b<H; b++){
@@ -61,9 +70,9 @@ function worldGenTown(){
 	instance_create_depth(10 * 64, 10 * 64, layerPup, objPupStairs);
 	
 	
-	bmap[1, 2] = imgTInn;
-	bmap[3, 2] = imgTShop;
-	bmap[5, 2] = imgTTemple;
+	bmap[1, 2] = imgTInn; fmap[1, 3] = imgTGrassInn;
+	bmap[3, 2] = imgTShop; fmap[3, 3] = imgTGrassShop;
+	bmap[5, 2] = imgTTemple; fmap[5, 3] = imgTGrassTemple;
 	
 	//bmap[2, 6] = imgTHouses3;
 	//bmap[3, 7] = imgTHouses3;
