@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"imgBatPlayerFit",
-    "path":"sprites/imgBatPlayerFit/imgBatPlayerFit.yy",
+    "name":"imgPlayerFit",
+    "path":"sprites/imgPlayerFit/imgPlayerFit.yy",
   },
   "spriteMaskId":null,
   "visible":true,

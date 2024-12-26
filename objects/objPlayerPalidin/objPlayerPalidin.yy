@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"imgBatPlayerPal",
-    "path":"sprites/imgBatPlayerPal/imgBatPlayerPal.yy",
+    "name":"imgPlayerPal",
+    "path":"sprites/imgPlayerPal/imgPlayerPal.yy",
   },
   "spriteMaskId":null,
   "visible":true,

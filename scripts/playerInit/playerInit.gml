@@ -1,7 +1,8 @@
 function playerInit(){
 	
-	
-	
+	for(var i=0; i<15; i++){
+		inventory[i] = noone;
+	}
 	
 	batFighter = instance_create_depth(-96, 0, ww.layerScreen - 1, objPlayerFighter);
 	batBarb = instance_create_depth(-96, 0, ww.layerScreen - 1, objPlayerBarbarian);

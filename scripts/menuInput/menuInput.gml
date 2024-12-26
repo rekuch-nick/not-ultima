@@ -1,6 +1,22 @@
 function menuInput(){
 	if(menu == noone){ return ""; }
 	
+	with(objEff){
+		if(holdMenu){ return ""; }
+	}
+	
+	
+	if(menu[0] == "DIR"){
+		if(ww.xTapped){
+			if(ww.xIn < 0){ return "LEFT"; }
+			if(ww.xIn > 0){ return "RIGHT"; }
+		}
+		if(ww.yTapped){
+			if(ww.yIn < 0){ return "UP"; }
+			if(ww.yIn > 0){ return "DOWN"; }
+		}
+	}
+	
 	
 	if(ww.yIn != 0){
 		if(ww.yTapped || ww.icd < 1){

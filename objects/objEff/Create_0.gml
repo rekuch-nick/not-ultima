@@ -10,3 +10,9 @@ if(!variable_instance_exists(id, "txt")){ txt = ""; }
 if(!variable_instance_exists(id, "txtCol")){ txtCol = c_white; }
 
 holdBattle = false;
+holdMenu = false;
+
+rot = 0;
+rotChanceChance = 0;
+gro = 0;
+bgSquare = false;

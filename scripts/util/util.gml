@@ -6,6 +6,9 @@ enum State {
 	choosingTargetSkillFoe, choosingTargetItemFoe, 
 	battleWon, battleLost, battleEscape,
 	partySelect, shop,
+	mapSkillChooseUser, mapSkillChooseSkill, mapSkillChooseTarget, mapSkillChooseDirection, mapSkillWait,
+	promoteChooseWho,
+	mapStats, mapItem, mapItemEquip, mapItemTarget,
 }
 
 enum Class {
@@ -16,12 +19,9 @@ enum Class {
 }
 
 enum Spell {
-	heal, turn, pure, life,
-	fire, light, hedge, warp, stun,
-	open,
-	valor,
-	bomb,
-	morph,
+	heal, turn, life, smite,
+	fire, root, ice, poison, warp, counterspell,
+	light, open, sing, bomb, rage,
 }
 
 enum Passive { // not sure about this, but could help with player communicaiton...
@@ -45,3 +45,10 @@ function disOrth(x1, y1, x2, y2){
 	return abs(x1 - x2) + abs(y1 - y2);
 }
 
+function isDirection(s){
+	return s == "UP" || s == "DOWN" || s == "LEFT" || s == "RIGHT";
+}
+
+function chestGold(){
+	return irandom_range(max(1, ww.stage), max(99, ww.stage * 2));
+}

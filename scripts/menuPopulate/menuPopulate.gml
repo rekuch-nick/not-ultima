@@ -28,6 +28,8 @@ function menuPopulateAlly(){
 	return [pc.party[0].nam, pc.party[1].nam, pc.party[2].nam, pc.party[3].nam];
 }
 
+
+
 function menuPopulateFoe(char){
 	var mn = [];
 	menuRef = noone;
@@ -68,4 +70,25 @@ function menuPopulateFoe(char){
 	}
 	
 	return mn;
+}
+
+function menuPopulateItem(){
+	var mn = [];
+	menuRef = noone;
+	for(var i=0; i<15; i++){
+		menuRef[i] = pc.inventory[i];
+		if(pc.inventory[i] == noone){
+			mn[i] = "";
+		} else {
+			mn[i] = pc.inventory[i].nam;
+			if(pc.inventory[i].stacks > 1){
+				mn[i] += " x " + string(pc.inventory[i].stacks);
+			}
+		}
+	}
+	return mn;
+}
+
+function menuPopulatePause(){
+	return ["STATS", "SKILL", "ITEM"];
 }

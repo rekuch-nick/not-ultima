@@ -8,8 +8,8 @@
   "name":"objBlock",
   "overriddenProperties":[],
   "parent":{
-    "name":"system",
-    "path":"folders/Objects/system.yy",
+    "name":"tiles",
+    "path":"folders/Objects/tiles.yy",
   },
   "parentObjectId":{
     "name":"objTile",

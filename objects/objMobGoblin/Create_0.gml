@@ -5,4 +5,6 @@ nam = "GOBLIN";
 hp = 4;
 hpMax = 4;
 
-coins = choose(0, 0, 1);
+//dmgMin = 100; dmgMax = 200;
+
+coins = choose(1, 1, 2);

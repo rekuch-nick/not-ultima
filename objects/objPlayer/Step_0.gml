@@ -33,7 +33,7 @@ if(ww.pressedOK){
 		if(xSpot == pc.xSpot && ySpot == pc.ySpot){
 			with(objEncounter){ instance_destroy(); }
 			ww.state = State.gen;
-			break;
+			return;
 		}
 	}
 	
@@ -42,7 +42,17 @@ if(ww.pressedOK){
 			with(objEncounter){ instance_destroy(); }
 			ww.state = State.gen;
 			pc.gotoTown = true;
-			break;
+			return;
 		}
 	}
+	
+	with(objPupGuide){
+		if(xSpot == pc.xSpot && ySpot == pc.ySpot){
+			pc.guideTalk = true;
+			instance_create_depth(0, 0, ww.layerScreen, objScreenShop);
+			sprite_index = imgNPCGuide;
+		}
+	}
+	
+	
 }

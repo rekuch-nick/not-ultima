@@ -1,11 +1,23 @@
 function timePasses(){
 	
 	for(var i=0; i<4; i++){
-		pc.party[i].mp = clamp(pc.party[i].mp + 1, 0, pc.party[i].mpMax);
+		var c = pc.party[i];
+		if(c != noone){
+			var gain = c.class == Class.druid ? 2 : 1;
+			c.mp = clamp(c.mp + gain, 0, c.mpMax);
+		}
+		
 	}
 	
 	with(objEncounter){
 		readyTime += readyCharge;
 	}
-
+	
+	
+	
+	//if(instance_number(objEncounter) < 1 ){
+	if(instance_number(objEncounter) < 1 || roll(15)){
+		encounterSpawn();
+	}
+	
 }

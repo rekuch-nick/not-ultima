@@ -1,6 +1,6 @@
 function encounterSpawn(){
 	
-	var o = objEncounter;
+	var o = objEncounter01;
 	
 	var tries = 0;
 	while(tries < 1000){

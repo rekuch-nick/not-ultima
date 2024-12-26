@@ -16,7 +16,10 @@ if(image_alpha < 1){
 		state = State.waitingActive;
 		active = noone;
 		
-		with(objBattleChar){ ct = 0; }
+		with(objBattleChar){ 
+			ct = 0; 
+			if(roll(quickChance)){ ct = 100; }
+		}
 	}
 	return;
 }
@@ -57,6 +60,19 @@ if(state == State.battleWon){
 	instance_destroy();
 }
 
+if(state == State.battleLost){
+	instance_destroy(encounter);
+	with(objBattleChar){ if(aly != 1){ instance_destroy(); }}
+	ww.state = State.gen;
+	pc.gotoTown = true;
+	pc.coins = 0;
+	
+	var s = instance_create_depth(64 * 5.5, room_height / 2, depth - 10, effToast);
+	s.txt = "YOU LIMP BACK TO TOWN...\nBUT YOUR DROPPED YOUR GOLD!";
+	s.timeCD = 75;
+	instance_destroy();
+}
+
 if(state == State.battleEscape){
 	with(objBattleChar){ if(aly != 1){ instance_destroy(); }}
 	instance_destroy(encounter);
@@ -85,6 +101,7 @@ if(state == State.waitingActive){
 		ds_list_add(battleMessage, "PARTY DEFEATED...");
 		displayTime = displayTimeMax * 1.5;
 		state = State.battleLost;
+		with(objBattleChar){ ct = 0; }
 	}
 	if(numOfMobUp == 0){
 		ds_list_add(battleMessage, "FOES DEFEATED!");

@@ -1,5 +1,7 @@
 function playerEnterTile(){
 	
+	pc.lightTime = clamp(pc.lightTime - 1, 0, pc.lightTime);
+	
 	for(var a=xSpot-2; a<=xSpot+2; a++){
 		for(var b=ySpot-2; b<=ySpot+2; b++){
 			if(!inBounds(a, b)){ continue; }
@@ -11,9 +13,11 @@ function playerEnterTile(){
 	with(objPupCoins){
 		if(pc.xSpot == xSpot && pc.ySpot == ySpot){
 			pc.coins += val;
+			if(isFloorTreasure){ pc.gotFloorTreasure[ww.stage] = true; }
 			instance_destroy();
 		}
 	}
+	
 	
 	with(objPupGoal){
 		if(pc.xSpot == xSpot && pc.ySpot == ySpot){
@@ -59,10 +63,7 @@ function playerEnterTile(){
 	
 	
 	
-	if(instance_number(objEncounter) < 1 ){
-	//if(instance_number(objEncounter) < 1 || roll(15)){
-		encounterSpawn();
-	}
+	
 	
 	
 	

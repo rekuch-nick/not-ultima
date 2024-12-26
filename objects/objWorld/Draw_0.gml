@@ -2,10 +2,18 @@
 
 
 for(var a=0; a<W; a++){ for(var b=0; b<H; b++){
+	/*
 	if(vmap[a, b] > 0){
 		draw_set_alpha(vmap[a, b]);
 		draw_sprite_stretched(imgFog, 0, a * 64, b * 64, 64, 64);
+	}*/
+	
+	var l = max(ww.lightLevel, pc.lightTime);
+	var d = disOrth(a, b, pc.xSpot, pc.ySpot);
+	if(d > (l / 10) ){
+		draw_sprite_stretched(imgFog, 0, a * 64, b * 64, 64, 64);
 	}
+	
 }}
 draw_set_alpha(1);
 
@@ -21,3 +29,4 @@ for(var i=0; i<4; i++){
 var s = "DEEP " + string(ww.stage);
 draw_text(11 * 64 + 4, 520, s);
 draw_text(11 * 64 + 4, 550, "$" + string(pc.coins));
+draw_text(11 * 64 + 4, 580, "*" + string( max(pc.lightTime, ww.lightLevel) ));

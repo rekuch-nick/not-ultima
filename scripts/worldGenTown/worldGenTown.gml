@@ -1,5 +1,6 @@
 function worldGenTown(){
 	inTown = true;
+	lightLevel = 999;
 	
 	with(objBattleChar){ if(aly == 1){
 		hp = hpMax;

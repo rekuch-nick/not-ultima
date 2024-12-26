@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"imgBatPlayerSorc",
-    "path":"sprites/imgBatPlayerSorc/imgBatPlayerSorc.yy",
+    "name":"imgPlayerSorc",
+    "path":"sprites/imgPlayerSorc/imgPlayerSorc.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -1,4 +1,5 @@
 scale();
+image_xscale = 8; image_yscale = 8;
 xStart = x;
 xForward = xStart - 64;
 yStart = y;
@@ -29,9 +30,11 @@ dmgMax = 6;
 evade = 0;
 def = 0;
 
+runBonus = 0;
+quickChance = 0;
 
 lvl = 1;
-xp = 0;
+
 
 poison = 0;
 poisonImmune = 0;
@@ -41,6 +44,10 @@ slowImmune = 0;
 
 disarmed = 0;
 disarmedImmune = false;
+
+undead = false;
+turnResist = 0;
+
 
 wep = noone;
 arm = noone;

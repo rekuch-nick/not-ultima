@@ -5,6 +5,8 @@ function tileObjFromSprite(s){
 		case imgTBlock2:
 			return objBlock;	
 		
+		case imgChest:
+			return objChest;
 		
 		
 	}

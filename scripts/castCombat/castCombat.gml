@@ -21,6 +21,29 @@ function castCombat(caster, spell, target){
 		ds_list_add(battleMessage, active.nam + " CAST FIRE");
 	}
 	
+	if(spell == Spell.turn){
+		var deadHit = 0;
+		var deadTurned = 0;
+		with(objBattleChar){ if(aly == -1){
+			if(!undead){ continue; }
+			deadHit ++;
+			if(caster.lvl < turnResist){ continue; }
+			//var might = caster.lvl + irandom_range(1, 4);
+			var might = hp;
+			instance_create_depth(x, y, depth - 10, effFireTurn);
+			instance_create_depth(x, y - 32, ww.layerEff, effTxt, { txt: might, });
+			spellDamage(might, id);
+			deadTurned ++;
+		}}
+		if(deadHit == 0){
+			ds_list_add(battleMessage, "THERE'S NO UNDEAD TO TURN");
+		} else if (deadTurned == 0) {
+			ds_list_add(battleMessage, active.nam + " ISN'T STRONG ENOUGH TO TURN IT");
+		} else {
+			ds_list_add(battleMessage, active.nam + " TURNS UNDEAD");
+		}
+	}
+	
 	
 	if(spell == Spell.heal){
 		var might = (caster.lvl * 2) + irandom_range(1, 4) + irandom_range(1, 4);

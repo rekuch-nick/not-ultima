@@ -14,11 +14,20 @@ depth = ww.layerMob - ySpot;
 
 playerInit();
 
-
+guideTalk = false;
 coins = 0;
 gotoTown = true; //
+lightTime = 0;
 
 firstTown = false; //
 
-setParty(batFighter, batRog, batSorc, batDruid);
+setParty(batFighter, batPal, batDruid, batWiz);
 
+for(var i=0; i<200; i++){
+	gotFloorTreasure[i] = false;
+	seenTip[i] = false;
+}
+
+playerGainItem(getItem("ROCK"));
+playerGainItem(getItem("KEY"), 5);
+inventory[11] = getItem("TORCH")

@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"imgBatPlayerWiz",
-    "path":"sprites/imgBatPlayerWiz/imgBatPlayerWiz.yy",
+    "name":"imgPlayerWiz",
+    "path":"sprites/imgPlayerWiz/imgPlayerWiz.yy",
   },
   "spriteMaskId":null,
   "visible":true,

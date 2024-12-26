@@ -4,6 +4,7 @@
 
 if(menu == noone){
 	buildCharMenu();	
+	if(cur >= array_length(menu)){ cur = 0; }
 }
 
 
@@ -14,6 +15,7 @@ if(action == "NO"){
 	if(pIndex > 0){
 		party[pIndex - 1] = noone;
 		menu = noone;
+		menuRef = noone;
 		pIndex --;
 	}
 	

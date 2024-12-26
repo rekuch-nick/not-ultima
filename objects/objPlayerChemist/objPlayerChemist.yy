@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"imgBatPlayerAlch",
-    "path":"sprites/imgBatPlayerAlch/imgBatPlayerAlch.yy",
+    "name":"imgPlayerAlch",
+    "path":"sprites/imgPlayerAlch/imgPlayerAlch.yy",
   },
   "spriteMaskId":null,
   "visible":true,

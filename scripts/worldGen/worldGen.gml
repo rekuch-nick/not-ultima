@@ -2,6 +2,9 @@ function worldGen(){
 	stage ++;
 	fog = 0;
 	inTown = false;
+	floorTreasure = objPupCoins;
+	
+	lightLevel = 30;
 	
 	//reset
 	with(objTile){ instance_destroy(); }
@@ -35,7 +38,8 @@ function worldGen(){
 	
 	
 		worldGenMaze(pc.xSpot, pc.ySpot);
-		worldGenBConvert(imgTBlock, noone, 30);
+		worldGenBConvert(imgTBlock, noone, 20);
+		worldGenBConvert(imgTBlock, imgChest, 1);
 		worldGenEnforcePillars(imgTBlock);
 		//for(var a=0; a<W; a++){ for(var b=0; b<H; b++){ if(roll(30)){ bmap[a, b] = imgTBlock; } }}
 	
@@ -76,7 +80,26 @@ function worldGen(){
 		} else {
 			//TODO: handle no stair spot
 		}
-	
+		
+		if(!pc.gotFloorTreasure[stage]){
+			var c = findEmptySpace();
+			if(c != noone){
+				c = instance_create_depth(c.a * 64, c.b * 64, ww.layerPup, floorTreasure);
+				if(floorTreasure == objPupCoins){ c.val = 50; }
+				c.isFloorTreasure = true;
+			}
+		}
+		
+		if(stage < 100){
+			var c = findEmptySpace();
+			if(c != noone){
+				c = instance_create_depth(c.a * 64 + 32, c.b * 64 + 32, ww.layerPup, objPupGuide);
+				if(!pc.seenTip[stage]){
+					c.sprite_index = imgNPCGuideNew;
+				}
+			}
+		}
+		
 	
 		for(var i=1; i<=5; i++){
 			var c = findEmptySpace();
