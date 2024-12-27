@@ -18,6 +18,29 @@ function setStats(c){
 		quickChance = gainQuickChance(class, lvl);
 		runBonus = gainRunBonus(class, lvl);
 		
+		spellPowerPlus = 0;
+		
+		if(wep != noone){
+			if(wep.nam == "SWORD"){
+				dmgMin += wep.bonus;
+				dmgMax += wep.bonus;
+			}
+			if(wep.nam == "STAFF"){
+				spellPowerPlus += wep.bonus;
+			}
+		}
+		
+		if(arm != noone){
+			if(wep.nam == "PLATE"){
+				def += arm.bonus;
+			}
+			if(wep.nam == "CLOAK"){
+				evade += arm.bonus * 5;
+			}
+		}
+		
+		
+		evade = clamp(evade, 0, 90);
 	}
 }
 

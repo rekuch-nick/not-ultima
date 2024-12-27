@@ -74,7 +74,7 @@ function castMap(caster, spell, target, dir, ignoreMP){
 				} else {
 					playerGainItem(item, val);
 					var s = instance_create_depth(64 * 5.5, room_height / 2, ll, effToast);
-					s.txt = "FOUND " + string(item.nam);
+					s.txt = "FOUND " + itemName(item);
 					if(val > 1){
 						s.txt += " x " + string(val);
 					}

@@ -22,6 +22,14 @@ if(ww.stage == 0 && ww.fmap[pc.xSpot, pc.ySpot] != noone){
 	}
 }
 
+if(ww.stage == 0 && ww.fmap[pc.xSpot, pc.ySpot] != noone){
+	if(ww.fmap[pc.xSpot, pc.ySpot].sprite_index == imgTGrassShop){
+		txt = "WELCOME, ADVENTURERS!\nFEEL FREE TO LOOK AROUND.";
+		menu = ["BUY", "SELL"];
+		forSale = [getItem("TORCH"), getItem("KEY"), getItem("SWORD"), getItem("CLOAK")];
+	}
+}
+
 if(pc.guideTalk){
 	shopGuideSetup();
 }

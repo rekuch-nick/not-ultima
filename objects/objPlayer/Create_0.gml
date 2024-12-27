@@ -28,6 +28,9 @@ for(var i=0; i<200; i++){
 	seenTip[i] = false;
 }
 
-playerGainItem(getItem("ROCK"));
+playerGainItem(getItem("SWORD"));
+playerGainItem(getItem("STAFF"));
+playerGainItem(getItem("SWORD"));
+playerGainItem(getItem("STAFF"));
 playerGainItem(getItem("KEY"), 5);
-inventory[11] = getItem("TORCH")
+playerGainItem(getItem("TORCH"), 5);

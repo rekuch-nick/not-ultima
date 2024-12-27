@@ -14,4 +14,10 @@ function drawStats(c){
 	if(c.quickChance > 0){
 		draw_text(250, 370, "FIRST% " + string(c.quickChance));
 	}
+	
+	
+	
+	draw_text(250, 580, "W: " + itemName(menuRef[cur].wep));
+	draw_text(250, 610, "A: " + itemName(menuRef[cur].arm));
+	draw_text(250, 640, "R: " + itemName(menuRef[cur].rng));
 }

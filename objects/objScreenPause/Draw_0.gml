@@ -12,8 +12,19 @@ if(state == State.mapStats){
 }
 
 if(state == State.mapSkillChooseUser ||
-		state == State.mapSkillChooseTarget ){
-	draw_sprite_stretched(menuRef[cur].sprite_index, 0, 400, 70, 128, 128);
+		state == State.mapSkillChooseTarget || state == State.equipOnWhom ){
+	if(cur < array_length(menuRef)){
+		if(menuRef[cur] != noone){			
+			draw_sprite_stretched(menuRef[cur].sprite_index, 0, 400, 70, 128, 128);
+		}
+	}
+}
+
+if(state == State.equipOnWhom){
+	draw_text(250, 250, "CURRENT: ")
+	draw_text(280, 280, itemName(menuRef[cur].wep));
+	draw_text(250, 340, "CHANGE: ")
+	draw_text(280, 370, equipChange(menuRef[cur].wep, itemToUse));
 }
 
 if(state == State.mapSkillChooseSkill ){

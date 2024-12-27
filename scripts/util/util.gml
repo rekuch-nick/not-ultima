@@ -8,7 +8,7 @@ enum State {
 	partySelect, shop,
 	mapSkillChooseUser, mapSkillChooseSkill, mapSkillChooseTarget, mapSkillChooseDirection, mapSkillWait,
 	promoteChooseWho,
-	mapStats, mapItem, mapItemEquip, mapItemTarget,
+	mapStats, mapItem, mapItemEquip, mapItemTarget, equipOnWhom,
 }
 
 enum Class {

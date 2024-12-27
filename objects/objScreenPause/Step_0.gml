@@ -5,6 +5,7 @@ if(state == State.mapSkillWait){
 	}
 	state = nextState;
 	if(state == State.play){
+		ww.state = State.play;
 		instance_destroy();
 		return;
 	}
@@ -175,7 +176,15 @@ if(state == State.mapItem){
 	} else if(action != ""){
 		var itm = menuRef[cur];
 		
-		if(itm.type == Item.wep || itm.type == Item.arm || itm.type == Item.rng){
+		show_debug_message(itm)
+		show_debug_message(Item.wep)
+		
+		if(itm.typ == Item.wep || itm.typ == Item.arm || itm.typ == Item.rng){
+			
+			itemToUse = itm;
+			state = State.equipOnWhom;
+			menu = menuPopulateAlly();
+			cur = 0;
 			
 		} else if(itemNeedsTarget(itm) == -1){ //pick dir
 			itemToUse = itm;
@@ -186,7 +195,7 @@ if(state == State.mapItem){
 		} else {// auto target
 			itemToUse = itm;
 			var cast = castMap(noone, itemToUse.spell, menuRef[cur], action, true);
-			if(cast && itemToUse.type == Item.consumable){
+			if(cast && itemToUse.typ == Item.consumable){
 				playerLoseItem(itemToUse);
 			}
 			itemToUse = noone;
@@ -236,7 +245,44 @@ if(state == State.mapItemTarget){
 }
 
 
-
+if(state == State.equipOnWhom){
+	txt = "Who will equip the " + itemToUse.nam + "?";
+	
+	if(action == "NO"){
+		txt = "";
+		state = State.mapItem;
+		menuRef = noone;
+		menu = menuPopulateItem();
+		cur = lastItem; 
+	} else if(action != ""){
+		if(itemToUse.typ == Item.wep){
+			var itm = menuRef[cur].wep;
+			var i = playerHasItemAt(itemToUse);
+			menuRef[cur].wep = itemToUse;
+			pc.inventory[i] = itm;
+		} else if(itemToUse.typ == Item.arm){
+			var itm = menuRef[cur].arm;
+			var i = playerHasItemAt(itemToUse);
+			menuRef[cur].arm= itemToUse;
+			pc.inventory[i] = itm;
+		} else if(itemToUse.typ == Item.rng){
+			var itm = menuRef[cur].rng;
+			var i = playerHasItemAt(itemToUse);
+			menuRef[cur].rng = itemToUse;
+			pc.inventory[i] = itm;
+		}
+		
+		txt = "";
+		state = State.mapItem;
+		menuRef = noone;
+		menu = menuPopulateItem();
+		cur = lastItem; 
+		setPartyStats();
+	}
+	
+	
+	return;
+}
 
 
 

@@ -13,7 +13,8 @@ function playerHasItemAt(i1){
 	for(var i=0; i<15; i++){
 		var i2 = pc.inventory[i];
 		if(i2 == noone){ continue; }
-		if(i1.nam == i2.nam){ return i; }
+		if(i1.nam == i2.nam && i1.bonus == i2.bonus){ return i; }
+		// TODO : add && other props!
 	}
 	
 	return -1;
@@ -74,4 +75,28 @@ function itemNeedsTarget(itm){
 
 enum Item {
 	consumable, unlimited, wep, arm, rng, null,
+}
+
+function itemName(itm){
+	if(itm == noone){ return "---"; }
+		
+	//if(itm.stackable && itm.stacks > 1){
+	//	return itm.nam + " x " + string(itm.stacks);
+	//}
+	
+	if(itm.typ == Item.wep || itm.typ == Item.arm || itm.typ == Item.rng ){
+		var str = itm.nam;
+		
+		if(itm.bonus > 0){
+			str = "+" + string(itm.bonus) + " " + str;
+		}
+		
+		return str;
+	}
+	
+	return itm.nam;
+}
+
+function equipChange(i1, i2){
+	return "+some stats\n-some more stats";
 }

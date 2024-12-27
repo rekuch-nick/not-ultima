@@ -4,7 +4,7 @@ function worldGen(){
 	inTown = false;
 	floorTreasure = objPupCoins;
 	
-	lightLevel = 30;
+	lightLevel = 60;
 	
 	//reset
 	with(objTile){ instance_destroy(); }

@@ -80,7 +80,7 @@ function menuPopulateItem(){
 		if(pc.inventory[i] == noone){
 			mn[i] = "";
 		} else {
-			mn[i] = pc.inventory[i].nam;
+			mn[i] = itemName(pc.inventory[i]);
 			if(pc.inventory[i].stacks > 1){
 				mn[i] += " x " + string(pc.inventory[i].stacks);
 			}

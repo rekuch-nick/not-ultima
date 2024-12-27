@@ -34,7 +34,7 @@ runBonus = 0;
 quickChance = 0;
 
 lvl = 1;
-
+spellPowerPlus = 0;
 
 poison = 0;
 poisonImmune = 0;

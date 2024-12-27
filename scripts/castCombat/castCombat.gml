@@ -1,7 +1,7 @@
 function castCombat(caster, spell, target){
 	
 	var cost = spellCost(spell);
-	
+	var pow = caster.lvl + caster.spellPowerPlus;
 	
 	if(caster.mp < cost){
 		ds_list_add(battleMessage, "NOT ENOUGH MP");
@@ -13,7 +13,7 @@ function castCombat(caster, spell, target){
 	if(spell == Spell.fire){
 		
 		with(objBattleChar){ if(aly == -1){
-			var might = caster.lvl + irandom_range(1, 4);
+			var might = pow + irandom_range(1, 4);
 			instance_create_depth(x, y, depth - 10, effFire);
 			instance_create_depth(x, y - 32, ww.layerEff, effTxt, { txt: might, });
 			spellDamage(might, id);
@@ -27,7 +27,7 @@ function castCombat(caster, spell, target){
 		with(objBattleChar){ if(aly == -1){
 			if(!undead){ continue; }
 			deadHit ++;
-			if(caster.lvl < turnResist){ continue; }
+			if(pow < turnResist){ continue; }
 			//var might = caster.lvl + irandom_range(1, 4);
 			var might = hp;
 			instance_create_depth(x, y, depth - 10, effFireTurn);
@@ -46,7 +46,7 @@ function castCombat(caster, spell, target){
 	
 	
 	if(spell == Spell.heal){
-		var might = (caster.lvl * 2) + irandom_range(1, 4) + irandom_range(1, 4);
+		var might = (pow * 2) + irandom_range(1, 4) + irandom_range(1, 4);
 		instance_create_depth(target.x, target.y, depth - 10, effHeal);
 		instance_create_depth(x, y - 32, ww.layerEff, effTxt, { txt: might, txtCol: c_aqua});
 		target.hp = clamp(target.hp + might, 0, target.hpMax);
